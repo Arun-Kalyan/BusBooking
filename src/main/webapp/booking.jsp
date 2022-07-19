@@ -29,6 +29,8 @@ function validate (elem){
 	var destination = document.getElementById('destination').value;
 	if(source === destination){
 		alert("Source and Destination cannot be same!");
+		document.getElementById('source').value = "Source";
+		document.getElementById('destination').value = "Destination";
 	}
 
 }
@@ -116,7 +118,7 @@ function check ()
               <div class="row">                
               <div class="col-sm-12">
                   <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-12">
                       <div class="form-group">
                         <span class="form-label">Adults</span>
                         <select class="form-control" name = "adults">
@@ -126,11 +128,15 @@ function check ()
                           <option>4</option>
                           <option>5</option>
                           <option>6</option>
+                          <option>7</option>           
+                          <option>8</option>
+                          <option>9</option>
+                          <option>10</option>
                         </select>
                         <span class="select-arrow"></span>
                       </div>
                     </div>
-                    <div class="col-sm-6">
+                    <!-- <div class="col-sm-6">
                       <div class="form-group">
                         <span class="form-label">Children</span>
                         <select class="form-control" name = "kids">
@@ -144,7 +150,7 @@ function check ()
                        </select>
                         <span class="select-arrow"></span>
                       </div>
-                    </div>
+                    </div> -->
                     </div>
                  
               <div class="form-group">

@@ -93,7 +93,7 @@ public class Ticket {
 		this.totalfare=totalfare;
 	}
 	
-	public Ticket(String name,String source, String destination, int adults, int kids,int fare, int time, String shortSource, String shortDestination, int totalfare, String busType) {
+	public Ticket(String name,String source, String destination, int adults, int fare, int duration, String shortSource, String shortDestination, int totalfare, String busType) {
 		super();
 		this.name = name;
 		this.source = source;
@@ -101,7 +101,7 @@ public class Ticket {
 		this.adults = adults;
 		this.kids = kids;
 		this.fare = fare;
-		this.time = time;
+		this.duration = duration;
 		this.shortSource= shortSource;
 		this.shortDestination = shortDestination;
 		this.totalfare=totalfare;
@@ -109,6 +109,12 @@ public class Ticket {
 	}
 	
 	
+	public int getDuration() {
+		return duration;
+	}
+	public void setDuration(int duration) {
+		this.duration = duration;
+	}
 	public int getTotalfare() {
 		return totalfare;
 	}

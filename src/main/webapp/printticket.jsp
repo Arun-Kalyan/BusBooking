@@ -22,9 +22,13 @@
     String shortSource = ticket.getShortSource();
     String shortDestination = ticket.getShortDestination();
     int adults = ticket.getAdults();
-    int kids = ticket.getKids();
+    //int kids = ticket.getKids();
     int fare = ticket.getFare();
-    int time = ticket.getTime();
+    int time = ticket.getDuration();
+    int total = ticket.getTotalfare();
+  
+    
+    System.out.println("Time is:"+time);
     String bustype = ticket.getBusType();
     bustype = (bustype.substring(0,1).toUpperCase() + (bustype.substring(1, bustype.length()).toLowerCase()));
     SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
@@ -82,14 +86,13 @@
          
         </div>
         <div class="row row-2">
-          <p><span>Total Fare</span><%=fare%></p>
-          <p class="row--center"><span>Departs</span><%=originalTime%></p>
-          <p class="row--right"><span>Arrives</span><%=result%></p>
+          <p class="row--center"><span>Start Time</span><%=originalTime%></p>
+          <p class="row--right"><span>End Time</span><%=result%></p>        
         </div>
         <div class="row row-3">
           <p><span>Passenger</span><%=name%></p>
           <p class="row--center"><span>Adults</span><%=adults%></p>
-          <p class="row--right"><span>Kids</span><%=kids%></p>
+         <p class="row--right"><span>Total Fare</span><%=total%></p> 
         </div>
       </div>
       <div class="bar--code"></div>

@@ -34,7 +34,7 @@ public class BookingServlet extends HttpServlet {
 		String source = request.getParameter("source");
 		String destination = request.getParameter("destination");
 		int adults = Integer.parseInt(request.getParameter("adults"));
-		int children = Integer.parseInt(request.getParameter("kids"));
+		//int children = Integer.parseInt(request.getParameter("kids"));
 		String bustype = request.getParameter("type");
 		bustype = bustype.toLowerCase();
 		
@@ -102,15 +102,16 @@ public class BookingServlet extends HttpServlet {
 		else if(fare <=5 && bustype.equals("deluxe")) fare = 8;
 		else if(fare <=5 && bustype.equals("ac")) fare = 12;
 		
-		int totalfare = (fare * adults )+ (fare * children);
+		int totalfare = (fare * adults );
 		int duration = time[destinationIndex] - time[sourceIndex];
 		
 		System.out.println("Price1: "+price1+" and Price2 is: "+price2+ "and fare is: "+ fare);
 		System.out.println("No of Adults: "+adults);
-		System.out.println("No of Children: "+children);
+		//System.out.println("No of Children: "+children);
 		System.out.println("Total: "+totalfare);
+		System.out.println("Time taken: "+duration);
 		
-		Ticket ticket = new Ticket(name, places[sourceIndex], places[destinationIndex],adults, children,fare,duration, shortSource, shortDestination,totalfare, bustype);
+		Ticket ticket = new Ticket(name, places[sourceIndex], places[destinationIndex],adults, fare,duration, shortSource, shortDestination,totalfare, bustype);
 
 		request.setAttribute("ticket", ticket);
 		RequestDispatcher view = request.getRequestDispatcher("printticket.jsp");
